@@ -199,14 +199,14 @@ async def fetch_video_info(url, ydl_opts, progress_message, check_duration_and_s
         if check_duration_and_size:
              
             duration = info_dict.get('duration', 0)
-            if duration and duration > 3 * 3600:   
+            if duration and duration > 10 * 36000:   
                 await progress_message.edit("**❌ __Video is longer than 3 hours. Download aborted...__**")
                 return None
  
              
             estimated_size = info_dict.get('filesize_approx', 0)
-            if estimated_size and estimated_size > 2 * 1024 * 1024 * 1024:   
-                await progress_message.edit("**🤞 __Video size is larger than 2GB. Aborting download.__**")
+            if estimated_size and estimated_size > 50 * 51200 * 51200 * 51200:   
+                await progress_message.edit("**🤞 __Video size is larger than 50GB. Aborting download.__**")
                 return None
  
         return info_dict
@@ -304,7 +304,7 @@ def progress_callback(done, total, user_id):
         f"│ **__Speed:__** {speed_mbps:.2f} Mbps\n"
         f"│ **__Time Remaining:__** {remaining_time_min:.2f} min\n"
         f"╰──────────────────╯\n\n"
-        f"**__Powered by Team SPY__**"
+        f"**__Powered by Krishna__**"
     )
  
      
